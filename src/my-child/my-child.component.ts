@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./my-child.component.css'],
 })
 export class MyChildComponent implements OnInit {
-  constructor() {}
+  constructor() {
+    this.message = '';
+  }
+
+  // If we would remove the @Input() decorate, we would get an error message, because "message" property is used in the parent's HTML:
+  @Input()
+  message: string;
 
   ngOnInit() {}
 }
