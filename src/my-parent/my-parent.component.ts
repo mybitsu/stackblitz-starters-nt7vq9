@@ -9,7 +9,12 @@ import { MyChildComponent } from '../my-child/my-child.component';
   imports: [MyChildComponent],
 })
 export class MyParentComponent implements OnInit {
+  acceptedMessage: string = '';
   constructor() {}
 
   ngOnInit() {}
+
+  receiveMessage($event: string) {
+    this.acceptedMessage = $event;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 @Component({
   standalone: true,
@@ -15,5 +15,13 @@ export class MyChildComponent implements OnInit {
   @Input()
   message: string;
 
+  @Output()
+  messageEvent = new EventEmitter<string>();
+
+  what_i_have_to_say: string = 'HiFromChild';
+
+  sendMessage() {
+    this.messageEvent.emit(this.what_i_have_to_say + Math.random());
+  }
   ngOnInit() {}
 }
