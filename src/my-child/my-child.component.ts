@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-my-child',
   templateUrl: './my-child.component.html',
-  styleUrls: ['./my-child.component.css']
+  styleUrls: ['./my-child.component.css'],
 })
 export class MyChildComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
